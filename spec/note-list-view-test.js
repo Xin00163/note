@@ -16,18 +16,15 @@ testForReturnHTMLNoNotes()
 function testForReturnHTMLOneNote(){
   var list = new List();
   var view = new View(list);
-  var note = new Note("Lea's note")
-  list.addNoteToList(note);
+  list.addNoteToList("Lea's note");
   assert.isTrue(view.returnHTML() === "<ul><li><div>Lea's note</div></li></ul>", "Convert one note to a html")
 }
 testForReturnHTMLOneNote()
 
 function testForReturnHTMLSeveralNote(){
-  var note = new Note("Lea's note")
-  var note1 = new Note("Xin's note")
   var list = new List();
-  list.addNoteToList(note);
-  list.addNoteToList(note1);
+  list.addNoteToList("Lea's note");
+  list.addNoteToList("Xin's note");
   var view = new View(list);
   assert.isTrue(view.returnHTML() === "<ul><li><div>Lea's note</div></li><li><div>Xin's note</div></li></ul>", "Convert several notes to a html")
 }

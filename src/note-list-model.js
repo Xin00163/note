@@ -2,9 +2,10 @@
   function List() {
     this.notes = [];
   };
-  // var note = new Note("note")
+
     List.prototype.addNoteToList = function (note) {
-    this.notes.push(note);
+      var note = new Note(note)
+      this.notes.push(note);
   };
 
     List.prototype.getNotesFromList = function () {

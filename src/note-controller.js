@@ -1,8 +1,7 @@
 (function(exports) {
   function Controller(list = new List()){
     this.list = list
-    note = new Note("Favourite drink: seltzer")
-    this.list.addNoteToList(note)
+    this.list.addNoteToList("Favourite drink: seltzer")
     this.view = new View(list)
   };
   exports.Controller = Controller;
