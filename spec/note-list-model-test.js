@@ -15,6 +15,7 @@ function addNoteToList() {
 
  addNoteToList();
 
+
 function getNotesFromList() {
   var list = new List()
   var note = new Note("Lea's note")
