@@ -12,19 +12,27 @@
 
 })(this);
 
-function MakeURLChangeShowCurrentNote(){
-  window.addEventListener("hashchange", showCurrentNote);
+function changeURLAndShowNote(){
+  window.addEventListener("hashchange", showCurrentNote)
 }
 
-function showCurrentNote(){
-
+function showCurrentNote(location){
+  var index = window.location.hash.split("#")[1].split("/")[1]
+  showNote(index)
 }
+
+
+function showNote(index){
+  document
+    .getElementById("note")
+    .innerHTML = controller.list.getNotesFromList(index)
+};
 
 window.onload = function() {
     controller = new Controller()
     controller.list.addNoteToList("Favourite drink: seltzer")
     controller.list.addNoteToList("Nihao")
     controller.list.addNoteToList("Hello")
-    controller.listMaker('app')
-
+    controller.listMaker("note")
+    changeURLAndShowNote();
 };
