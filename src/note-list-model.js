@@ -8,8 +8,8 @@
       this.notes.push(note);
   };
 
-    List.prototype.getNotesFromList = function () {
-      return this.notes
+    List.prototype.getNotesFromList = function (index) {
+      return this.notes[index].returnNote();
     };
 
   exports.List = List;

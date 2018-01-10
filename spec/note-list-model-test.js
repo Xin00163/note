@@ -18,7 +18,7 @@ function addNoteToList() {
 function getNotesFromList() {
   var list = new List()
   list.addNoteToList("Lea's note");
-  assert.isTrue(list.getNotesFromList()[0].returnNote() === "Lea's note", "Return the list of notes")
+  assert.isTrue(list.getNotesFromList(0) === "Lea's note", "Return the list of notes")
 }
 
 getNotesFromList();
@@ -27,7 +27,7 @@ function onlyShow20Characters(){
   var list = new List()
   list.addNoteToList("12345678901234567890XXX")
   var view = new View(list)
-  assert.isTrue(list.getNotesFromList()[0].returnNote().slice(0, 20) === "12345678901234567890", "Ony show first 20 characters of each note in the list")
+  assert.isTrue(list.getNotesFromList(0).slice(0, 20) === "12345678901234567890", "Ony show first 20 characters of each note in the list")
 }
 
 onlyShow20Characters();
