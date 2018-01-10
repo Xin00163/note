@@ -22,3 +22,19 @@ function getNotesFromList() {
 }
 
 getNotesFromList();
+
+function onlyShow20Characters(){
+  var list = new List()
+  list.addNoteToList("12345678901234567890XXX")
+  var view = new View(list)
+  assert.isTrue(list.getNotesFromList()[0].returnNote().slice(0, 20) === "12345678901234567890", "Ony show first 20 characters of each note in the list")
+}
+
+onlyShow20Characters();
+
+function testNoteID(){
+  var list = new List();
+  list.addNoteToList("test0")
+  list.addNoteToList("test1")
+  assert.isTrue(list.getNotesFromList().pop().getID() === 1)
+}

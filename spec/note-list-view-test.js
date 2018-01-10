@@ -17,7 +17,8 @@ function testForReturnHTMLOneNote(){
   var list = new List();
   var view = new View(list);
   list.addNoteToList("Lea's note");
-  assert.isTrue(view.returnHTML() === "<ul><li><div>Lea's note</div></li></ul>", "Convert one note to a html")
+  console.log(view.returnHTML())
+  assert.isTrue(view.returnHTML() === "<ul><li><div><a href='/#notes/0'>Lea's note</a></div></li></ul>", "Convert one note to a html")
 }
 testForReturnHTMLOneNote()
 
@@ -26,6 +27,6 @@ function testForReturnHTMLSeveralNote(){
   list.addNoteToList("Lea's note");
   list.addNoteToList("Xin's note");
   var view = new View(list);
-  assert.isTrue(view.returnHTML() === "<ul><li><div>Lea's note</div></li><li><div>Xin's note</div></li></ul>", "Convert several notes to a html")
+  assert.isTrue(view.returnHTML() === "<ul><li><div><a href='/#notes/0'>Lea's note</a></div></li><li><div><a href='/#notes/1'>Xin's note</a></div></li></ul>", "Convert several notes to a html")
 }
 testForReturnHTMLSeveralNote()

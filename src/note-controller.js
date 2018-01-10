@@ -12,12 +12,19 @@
 
 })(this);
 
+function MakeURLChangeShowCurrentNote(){
+  window.addEventListener("hashchange", showCurrentNote);
+}
 
+function showCurrentNote(){
 
+}
 
 window.onload = function() {
     controller = new Controller()
     controller.list.addNoteToList("Favourite drink: seltzer")
+    controller.list.addNoteToList("Nihao")
+    controller.list.addNoteToList("Hello")
     controller.listMaker('app')
 
 };
