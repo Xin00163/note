@@ -1,8 +1,7 @@
 (function(exports) {
-  function Controller(list = new List()){
+  function Controller(list = new List(), view = new View(list)){
     this.list = list
-    this.list.addNoteToList("Favourite drink: seltzer")
-    this.view = new View(this.list)
+    this.view = view
   };
 
   Controller.prototype.listMaker = function(element){
@@ -17,7 +16,8 @@
 
 
 window.onload = function() {
-
-
+    controller = new Controller()
+    controller.list.addNoteToList("Favourite drink: seltzer")
+    controller.listMaker('app')
 
 };
