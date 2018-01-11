@@ -21,11 +21,17 @@ function showCurrentNote(location){
   showNote(index)
 }
 
-
 function showNote(index){
   document
     .getElementById("note")
     .innerHTML = controller.list.getNotesFromList(index)
+};
+
+function preventSubmitFromRefreshingPage() {
+  document.getElementById("text").addEventListener("submit", function(evt) {
+    console.log(evt)
+    evt.preventDefault();
+  });
 };
 
 window.onload = function() {
@@ -35,4 +41,5 @@ window.onload = function() {
     controller.list.addNoteToList("Hello")
     controller.listMaker("note")
     changeURLAndShowNote();
+    preventSubmitFromRefreshingPage();
 };
