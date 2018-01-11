@@ -27,10 +27,11 @@ function showNote(index){
     .innerHTML = controller.list.getNotesFromList(index)
 };
 
-function preventSubmitFromRefreshingPage() {
+function preventSubmitFormRefreshingPage() {
   document.getElementById("text").addEventListener("submit", function(evt) {
-    console.log(evt)
     evt.preventDefault();
+    controller.list.addNoteToList(document.getElementById("textarea").value)
+    controller.listMaker("note")
   });
 };
 
@@ -41,5 +42,5 @@ window.onload = function() {
     controller.list.addNoteToList("Hello")
     controller.listMaker("note")
     changeURLAndShowNote();
-    preventSubmitFromRefreshingPage();
+    preventSubmitFormRefreshingPage();
 };
