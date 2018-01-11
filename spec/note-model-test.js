@@ -12,3 +12,11 @@ function checkTextFormat(){
   };
 
   returnNote();
+
+  function returnID(){
+    var note = new Note("Keran's note")
+    console.log(note.returnID())
+    assert.isTrue(note.returnID() === 2, "return the note id")
+  }
+
+  returnID();

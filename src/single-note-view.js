@@ -7,6 +7,5 @@
     return "<li>" + this.newnote.text + "</li>";
 
   };
-
   exports.singleNoteView = singleNoteView;
 })(this);

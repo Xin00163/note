@@ -27,3 +27,15 @@ function testNoteController(){
 };
 
 testNoteController()
+
+// function testChangeURLAndShowNote(){
+//   var list = new List();
+//   var view = new View(list);
+//   var controller = new Controller(list, view);
+//   var index = 0;
+//
+//   controller.listMaker("note");
+//   assert.isTrue(document.getElementById("note").innerHTML === controller.list.getNotesFromList(0), "Change url and show current note");
+// }
+//
+// testChangeURLAndShowNote()
