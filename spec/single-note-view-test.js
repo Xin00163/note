@@ -8,9 +8,9 @@ function testPrintNote(){
     }
   }
 
-  var singleNoteView = this.singleNoteView;
-  var singleNoteView = new singleNoteView(noteDouble)
-  assert.isTrue(singleNoteView.printNote() === "<ul><li><a href='#notes/1'>Xin's note</a></li></ul>", "print note in single note view")
+  // var singleNoteView = this.singleNoteView;
+  var singleNoteView = new SingleNoteView(noteDouble)
+  assert.isTrue(singleNoteView.printNote() === "<li><a href='#notes/1'>Xin's note</a></li>", "print note in single note view")
 }
 
 testPrintNote();

@@ -17,14 +17,16 @@ function changeURLAndShowNote(){
 }
 
 function showCurrentNote(location){
-  var index = window.location.hash.split("#")[1].split("/")[1]
-  showNote(index)
+  var id = window.location.hash.split("#")[1].split("/")[1]
+  showNote(id)
 }
 
-function showNote(index){
+
+function showNote(id){
+  var singleNoteView = new SingleNoteView(controller.list.notes[id])
   document
     .getElementById("note")
-    .innerHTML = controller.list.getNotesFromList(index)
+    .innerHTML = singleNoteView.returnNoteText();
 };
 
 function preventSubmitFormRefreshingPage() {

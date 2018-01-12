@@ -1,11 +1,14 @@
 (function(exports) {
-  function singleNoteView(note){
+  function SingleNoteView(note){
     this.newnote = note;
   };
 
-  singleNoteView.prototype.printNote = function(){
-    // return "<li>" + this.newnote.text + "</li>";
-    return "<ul><li><a href='#notes/" + this.newnote.id + "'>" + this.newnote.returnNote().slice(0, 20) + "</a></li></ul>"
+  SingleNoteView.prototype.printNote = function(){
+    return "<li><a href='#notes/" + this.newnote.id + "'>" + this.newnote.returnNote().slice(0, 20) + "</a></li>"
   };
-  exports.singleNoteView = singleNoteView;
+
+  SingleNoteView.prototype.returnNoteText = function(){
+    return this.newnote.returnNote()
+  }
+  exports.SingleNoteView = SingleNoteView;
 })(this);
