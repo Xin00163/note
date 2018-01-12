@@ -16,17 +16,40 @@ testForReturnHTMLNoNotes()
 function testForReturnHTMLOneNote(){
   var list = new List();
   var view = new View(list);
-  list.addNoteToList("Lea's note");
-  console.log(view.returnHTML())
-  assert.isTrue(view.returnHTML() === "<ul><li><div><a href='#notes/0'>Lea's note</a></div></li></ul>", "Convert one note to a html")
+  var noteDouble = new NoteDouble()
+  function NoteDouble() {
+    this.id = 1;
+    this.text = "Lea's note";
+    NoteDouble.prototype.returnNote = function(){
+      return this.text;
+    }
+  }
+  list.notes.push(noteDouble);
+  assert.isTrue(view.returnHTML() === "<ul><li><a href='#notes/1'>Lea's note</a></li></ul>", "Convert one note to a html")
 }
 testForReturnHTMLOneNote()
 
 function testForReturnHTMLSeveralNote(){
   var list = new List();
-  list.addNoteToList("Lea's note");
-  list.addNoteToList("Xin's note");
   var view = new View(list);
-  assert.isTrue(view.returnHTML() === "<ul><li><div><a href='#notes/0'>Lea's note</a></div></li><li><div><a href='#notes/1'>Xin's note</a></div></li></ul>", "Convert several notes to a html")
+  var noteDouble = new NoteDouble()
+  var noteDouble2 = new NoteDouble2()
+  function NoteDouble() {
+    this.id = 1;
+    this.text = "Lea's note";
+    NoteDouble.prototype.returnNote = function(){
+      return this.text;
+    }
+  }
+  function NoteDouble2() {
+    this.id = 2;
+    this.text = "Xin's note";
+    NoteDouble2.prototype.returnNote = function(){
+      return this.text;
+    }
+  }
+  list.notes.push(noteDouble, noteDouble2);
+
+  assert.isTrue(view.returnHTML() === "<ul><li><a href='#notes/1'>Lea's note</a></li><li><a href='#notes/2'>Xin's note</a></li></ul>", "Convert several notes to a html")
 }
 testForReturnHTMLSeveralNote()

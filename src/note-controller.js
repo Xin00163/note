@@ -35,6 +35,7 @@ function preventSubmitFormRefreshingPage() {
   });
 };
 
+
 window.onload = function() {
     controller = new Controller()
     controller.list.addNoteToList("Favourite drink: seltzer")
@@ -43,4 +44,5 @@ window.onload = function() {
     controller.listMaker("note")
     changeURLAndShowNote();
     preventSubmitFormRefreshingPage();
+
 };

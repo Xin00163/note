@@ -12,5 +12,9 @@
       return this.notes[index].returnNote();
     };
 
+    List.prototype.returnAllNotes = function () {
+      return this.notes;
+    };
+
   exports.List = List;
 })(this);

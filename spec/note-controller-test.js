@@ -21,9 +21,9 @@ function testNoteController(){
   var controller = new Controller(list, view);
   var div = controller.view.returnHTML();
 
-  controller.listMaker('app');
+  controller.listMaker('text');
 
-  assert.isTrue(document.getElementById("app").innerHTML === div, "Note controller");
+  assert.isTrue(document.getElementById("text").innerHTML === div, "Note controller");
 };
 
 testNoteController()
