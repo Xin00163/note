@@ -1,4 +1,4 @@
-function testPrintNote(){
+function testSummaryToHTML(){
   var noteDouble = new NoteDouble()
   function NoteDouble(){
     this.id = 1;
